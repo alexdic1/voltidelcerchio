@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I Guardiani del Cerchio</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Georgia', serif;
+      color: #fdfdfd;
+      scroll-behavior: smooth;
+    }
+    section {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    .btn {
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid #fff;
+      color: #fff;
+      cursor: pointer;
+    }
+    .guardiano {
+      margin: 2rem;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 1rem;
+      border-radius: 10px;
+      width: 300px;
+    }
+    .guardiano img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .descrizione {
+      display: none;
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      text-align: left;
+    }
+    form {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 2rem;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    input, select {
+      padding: 0.7rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Pagina 1 -->
+  <section style="background-image: url('immagini/A_digital_painting_depicts_a_large_arcane_symbol_e.png');">
+    <h1 style="font-size: 2rem; margin-bottom: 2rem;">Conosci i volti</h1>
+    <a href="#guardiani" class="btn">Avanti →</a>
+  </section>
+
+  <!-- Pagina 2 -->
+  <section id="guardiani" style="background-image: url('immagini/A_digital_painting_captures_a_figure_standing_atop.png'); flex-wrap: wrap; flex-direction: row; align-items: flex-start;">
+    <!-- Guardiani -->
+    <div class="guardiano">
+      <h2>Il Maestro</h2>
+      <img src="immagini/maestro.png" alt="Il Maestro">
+      <button class="btn" onclick="toggle('maestro')">Leggi descrizione</button>
+      <div id="maestro" class="descrizione"><p>Nessuno lo ha mai chiamato per nome. [...]</p></div>
+    </div>
+    <div class="guardiano">
+      <h2>Portavoce</h2>
+      <img src="immagini/portavoce.png" alt="Portavoce">
+      <button class="btn" onclick="toggle('portavoce')">Leggi descrizione</button>
+      <div id="portavoce" class="descrizione"><p>La Portavoce è una presenza che non passa inosservata [...]</p></div>
+    </div>
+    <div class="guardiano">
+      <h2>Sorvegliante</h2>
+      <img src="immagini/la_sorvegliante.png" alt="Sorvegliante">
+      <button class="btn" onclick="toggle('sorvegliante')">Leggi descrizione</button>
+      <div id="sorvegliante" class="descrizione"><p>Cammina al ritmo della luna, la sua anima si interroga [...]</p></div>
+    </div>
+    <div class="guardiano">
+      <h2>Custode</h2>
+      <img src="immagini/custode.png" alt="Custode">
+      <button class="btn" onclick="toggle('custode')">Leggi descrizione</button>
+      <div id="custode" class="descrizione"><p>Non parla per conto di nessuno, eppure le sue parole restano [...]</p></div>
+    </div>
+    <div class="guardiano">
+      <h2>Portatrice del Sigillo</h2>
+      <img src="immagini/portatrice_sigillo.png" alt="Portatrice del Sigillo">
+      <button class="btn" onclick="toggle('sigillo')">Leggi descrizione</button>
+      <div id="sigillo" class="descrizione"><p>Non parla molto: lascia che a parlare sia lo sguardo [...]</p></div>
+    </div>
+    <div class="guardiano">
+      <h2>Dama d'Argento</h2>
+      <img src="immagini/dama_argento.png" alt="Dama d'Argento">
+      <button class="btn" onclick="toggle('argento')">Leggi descrizione</button>
+      <div id="argento" class="descrizione"><p>Silenziosa come la nebbia del mattino, attraversa il mondo [...]</p></div>
+    </div>
+    <div class="guardiano">
+      <h2>Il Muratore</h2>
+      <img src="immagini/muratore.png" alt="Il Muratore">
+      <button class="btn" onclick="toggle('muratore')">Leggi descrizione</button>
+      <div id="muratore" class="descrizione"><p>Non appare, si manifesta. Come un sussurro tra le fiamme [...]</p></div>
+    </div>
+    <a href="#contatto" class="btn" style="width: 100%; text-align: center;">Prosegui →</a>
+  </section>
+
+  <!-- Pagina 3 -->
+  <section id="contatto" style="background-image: url('immagini/A_digital_painting_depicts_a_star-filled_night_sky.png');">
+    <h2>Da chi vuoi essere contattato?</h2>
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <input type="text" name="nome" placeholder="Inserisci il tuo nome IG" required />
+      <select name="guardiano" required>
+        <option value="">Scegli il Guardiano</option>
+        <option>Il Maestro</option>
+        <option>Portavoce</option>
+        <option>Sorvegliante</option>
+        <option>Custode</option>
+        <option>Portatrice del Sigillo</option>
+        <option>Dama d'Argento</option>
+        <option>Il Muratore</option>
+      </select>
+      <button class="btn" type="submit">Invia</button>
+    </form>
+  </section>
+
+  <script>
+    function toggle(id) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
