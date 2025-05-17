@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I Volti del Cerchio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Georgia', serif; background: #000; color: #fff; scroll-behavior: smooth; }
+    section {
+      height: 100vh; display: flex; flex-direction: column; align-items: center;
+      justify-content: center; text-align: center; padding: 2rem;
+      background-size: cover; background-position: center; position: relative;
+    }
+    h1 {
+      position: absolute; top: 1rem; font-size: 2rem;
+      background: rgba(0,0,0,0.6); padding: 0.4rem 1rem;
+      border-radius: 10px;
+    }
+    .open-btn {
+      position: absolute; bottom: 2rem; left: 2rem;
+      background: rgba(255,255,255,0.15); padding: 0.5rem 1rem;
+      border: 1px solid #fff; color: #fff; cursor: pointer;
+    }
+    .next {
+      position: absolute; bottom: 2rem; right: 2rem;
+      font-size: 2rem; cursor: pointer;
+    }
+    .overlay {
+      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+      background: rgba(0, 0, 0, 0.9); color: #fff;
+      display: none; justify-content: center; align-items: center;
+      padding: 2rem; text-align: left;
+    }
+    .overlay-content {
+      max-width: 800px; background: rgba(255,255,255,0.1);
+      padding: 2rem; border-radius: 15px;
+      box-shadow: 0 0 20px #000;
+    }
+    .close-btn {
+      position: absolute; top: 1rem; right: 2rem;
+      font-size: 1.5rem; cursor: pointer;
+    }
+    form {
+      background: rgba(0,0,0,0.6); padding: 2rem; border-radius: 10px;
+      display: flex; flex-direction: column; gap: 1rem;
+      width: 90%; max-width: 400px;
+    }
+    input, select {
+      padding: 0.8rem; font-size: 1rem; border-radius: 5px; border: none;
+    }
+  </style>
+</head>
+<body>
+
+<section style="background-image: url('/voltidelcerchio/immagini/A_digital_painting_depicts_a_large_arcane_symbol_e.png');">
+  <h1>Conosci i volti</h1>
+  <div class="next" onclick="location.href='#maestro'">↓</div>
+</section>
+
+<section id="maestro" style="background-image: url('/voltidelcerchio/immagini/maestro.png'); background-size: contain; background-repeat: no-repeat; background-color: #000;">
+  <h1>Il Maestro</h1>
+  <button class="open-btn" onclick="document.getElementById('overlay-maestro').style.display='flex'">👁 Apri il Velo</button>
+  <div class="next" onclick="location.href='#portavoce'">↓</div>
+</section>
+<div id="overlay-maestro" class="overlay" onclick="this.style.display='none'">
+  <div class="overlay-content">
+    <div class="close-btn" onclick="document.getElementById('overlay-maestro').style.display='none'; event.stopPropagation();">✖</div>
+    <h2>Il Maestro</h2>
+    <p>Nessuno lo ha mai chiamato per nome. Chi lo incontra lo chiama semplicemente il Maestro, come se ogni altro titolo fosse superfluo o inadeguato. Cammina in silenzio tra gli altri, ascolta più di quanto parli, eppure, quando si ferma, il tempo sembra rallentare attorno a lui. [...]</p>
+  </div>
+</div>
+
+<section id="portavoce" style="background-image: url('/voltidelcerchio/immagini/portavoce.png'); background-size: contain; background-repeat: no-repeat; background-color: #000;">
+  <h1>La Portavoce</h1>
+  <button class="open-btn" onclick="document.getElementById('overlay-portavoce').style.display='flex'">👁 Apri il Velo</button>
+  <div class="next" onclick="location.href='#sorvegliante'">↓</div>
+</section>
+<div id="overlay-portavoce" class="overlay" onclick="this.style.display='none'">
+  <div class="overlay-content">
+    <div class="close-btn" onclick="document.getElementById('overlay-portavoce').style.display='none'; event.stopPropagation();">✖</div>
+    <h2>La Portavoce</h2>
+    <p>La Portavoce è una presenza che non passa inosservata, non per clamore ma per intensità. Incarnazione di fierezza e indipendenza, non ha bisogno di parole altisonanti per imporsi: [...]</p>
+  </div>
+</div>
+
+<section id="sorvegliante" style="background-image: url('/voltidelcerchio/immagini/la_sorvegliante.png'); background-size: contain; background-repeat: no-repeat; background-color: #000;">
+  <h1>La Sorvegliante</h1>
+  <button class="open-btn" onclick="document.getElementById('overlay-sorvegliante').style.display='flex'">👁 Apri il Velo</button>
+  <div class="next" onclick="location.href='#custode'">↓</div>
+</section>
+<div id="overlay-sorvegliante" class="overlay" onclick="this.style.display='none'">
+  <div class="overlay-content">
+    <div class="close-btn" onclick="document.getElementById('overlay-sorvegliante').style.display='none'; event.stopPropagation();">✖</div>
+    <h2>La Sorvegliante</h2>
+    <p>Cammina al ritmo della luna, la sua anima si interroga sul suo cammino, ascolta silenziosa, parla solo quando necessario. Porta veli chiari sulle spalle, sotto vi erano occhi che avevano visto sorgere e crollare regni. [...]</p>
+  </div>
+</div>
+
+<section id="custode" style="background-image: url('/voltidelcerchio/immagini/custode.png'); background-size: contain; background-repeat: no-repeat; background-color: #000;">
+  <h1>Il Custode</h1>
+  <button class="open-btn" onclick="document.getElementById('overlay-custode').style.display='flex'">👁 Apri il Velo</button>
+  <div class="next" onclick="location.href='#sigillo'">↓</div>
+</section>
+<div id="overlay-custode" class="overlay" onclick="this.style.display='none'">
+  <div class="overlay-content">
+    <div class="close-btn" onclick="document.getElementById('overlay-custode').style.display='none'; event.stopPropagation();">✖</div>
+    <h2>Il Custode</h2>
+    <p>Non parla per conto di nessuno, eppure le sue parole restano impresse come marchi a fuoco. Non cerca il centro, ma ovunque si fermi, gli sguardi si voltano. [...]</p>
+  </div>
+</div>
+
+<section id="sigillo" style="background-image: url('/voltidelcerchio/immagini/portatrice_sigillo.png'); background-size: contain; background-repeat: no-repeat; background-color: #000;">
+  <h1>La Portatrice del Sigillo</h1>
+  <button class="open-btn" onclick="document.getElementById('overlay-sigillo').style.display='flex'">👁 Apri il Velo</button>
+  <div class="next" onclick="location.href='#argento'">↓</div>
+</section>
+<div id="overlay-sigillo" class="overlay" onclick="this.style.display='none'">
+  <div class="overlay-content">
+    <div class="close-btn" onclick="document.getElementById('overlay-sigillo').style.display='none'; event.stopPropagation();">✖</div>
+    <h2>La Portatrice del Sigillo</h2>
+    <p>Non parla molto: lascia che a parlare sia lo sguardo, limpido e calmo come l’acqua di una fonte sacra. Accanto cammina un lupo, e poco distante veglia un cavallo: non sono compagni scelti, ma emanazioni della sua stessa essenza. [...]</p>
+  </div>
+</div>
+
+<section id="argento" style="background-image: url('/voltidelcerchio/immagini/dama_argento.png'); background-size: contain; background-repeat: no-repeat; background-color: #000;">
+  <h1>La Dama d’Argento</h1>
+  <button class="open-btn" onclick="document.getElementById('overlay-argento').style.display='flex'">👁 Apri il Velo</button>
+  <div class="next" onclick="location.href='#muratore'">↓</div>
+</section>
+<div id="overlay-argento" class="overlay" onclick="this.style.display='none'">
+  <div class="overlay-content">
+    <div class="close-btn" onclick="document.getElementById('overlay-argento').style.display='none'; event.stopPropagation();">✖</div>
+    <h2>La Dama d’Argento</h2>
+    <p>Silenziosa come la nebbia del mattino, attraversa il mondo con passo misurato e sguardo antico. Ogni gesto è pesato, ogni parola scelta come una lama affilata: non per ferire, ma per incidere il vero. [...]</p>
+  </div>
+</div>
+
+<section id="muratore" style="background-image: url('/voltidelcerchio/immagini/muratore.png'); background-size: contain; background-repeat: no-repeat; background-color: #000;">
+  <h1>Il Muratore</h1>
+  <button class="open-btn" onclick="document.getElementById('overlay-muratore').style.display='flex'">👁 Apri il Velo</button>
+  <div class="next" onclick="location.href='#contatto'">↓</div>
+</section>
+<div id="overlay-muratore" class="overlay" onclick="this.style.display='none'">
+  <div class="overlay-content">
+    <div class="close-btn" onclick="document.getElementById('overlay-muratore').style.display='none'; event.stopPropagation();">✖</div>
+    <h2>Il Muratore</h2>
+    <p>Non appare, si manifesta. Come un sussurro tra le fiamme o un brivido nel deserto, è presenza che arde sotto la cenere. Nulla in lui è quiete, ma nulla è fuori controllo. [...]</p>
+  </div>
+</div>
+
+<section id="contatto" style="background-image: url('/voltidelcerchio/immagini/A_digital_painting_depicts_a_star-filled_night_sky.png');">
+  <h1>Contatto</h1>
+  <form action="https://getform.io/f/bllzjjrb" method="POST">
+    <input type="text" name="nome" placeholder="Il tuo nome IG" required />
+    <select name="guardiano" required>
+      <option value="">Chi vuoi contattare?</option>
+      <option>Il Maestro</option>
+      <option>La Portavoce</option>
+      <option>La Sorvegliante</option>
+      <option>Il Custode</option>
+      <option>La Portatrice del Sigillo</option>
+      <option>La Dama d’Argento</option>
+      <option>Il Muratore</option>
+    </select>
+    <button type="submit" class="open-btn">Invia</button>
+  </form>
+</section>
+</body>
+</html>
